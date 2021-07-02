@@ -1,15 +1,15 @@
 Webcam.set({
-  width: 350,
+  width: 310,
   height: 300,
   image_format: "png",
   png_quality: 90,
 
   constraints: {
-    facingMode: "enviroment",
+    facingMode: "environment",
   },
 });
-
 camera = document.getElementById("camera");
+
 Webcam.attach("#camera");
 
 function take_snapshot() {
@@ -19,11 +19,12 @@ function take_snapshot() {
   });
 }
 
-console.log("mI5 version:", mI5.version);
-classifier = mI5.imageClassifier("MobileNet", modelLoaded);
+console.log("ml5 version:", ml5.version);
+
+classifier = ml5.imageClassifier("MobileNet", modelLoaded);
 
 function modelLoaded() {
-  console.log("Model Loaded");
+  console.log("Model Loaded!");
 }
 
 function check() {
